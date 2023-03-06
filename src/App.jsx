@@ -47,7 +47,7 @@ function App() {
                 <Switch>
                     <Route exact path="/" component={Home} />
                     <Route exact path="/receptek" component={RecipeList} />
-                    <Route exact path="/uj-receptek" component={RecipeCreate} />
+                    <Route exact path="/uj-recept" component={RecipeCreate} />
                     <Route
                         exact
                         path="/recept-szerkesztes/:recipeSlug"
