@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Fragment, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import { Spinner } from "./Spinner";
-import { Modal } from "bootstrap";
+import { Modal } from "./Modal";
 
 
 export function RecipeList() {
@@ -44,7 +44,7 @@ export function RecipeList() {
                     Biztosan törlöd a {recipes.find((recipe) => recipe.id === deleteId)?.name} receptjét?
                 </Modal>
 
-            ): ("")}
+            ) : ("")}
             {
                 alignToRows(recipes).map((row, i) => (
                     <div className="row mb-3" key={i}>
@@ -62,17 +62,17 @@ export function RecipeList() {
                                             </button>
                                         </NavLink>
                                         <NavLink to={`/recept/${recipe.slug}`}>
-                                            <button className="btn btn-sm btn-outline-primary">
+                                            <button className="btn btn-sm btn-outline-primary mr-2">
                                                 <FontAwesomeIcon icon={faEye} />
                                             </button>
                                         </NavLink>
-                                        <NavLink to={`/recept/${recipe.slug}`}>
-                                            <button className="btn btn-sm btn-outline-danger ml-2" onClick={() => {
-                                                setDeleteId(recipe.id);
-                                            }}>
-                                                <FontAwesomeIcon icon={faTrashAlt} />
-                                            </button>
-                                        </NavLink>
+
+                                        <button className="btn btn-sm btn-outline-danger mr-2" onClick={() => {
+                                            setDeleteId(recipe.id);
+                                        }}>
+                                            <FontAwesomeIcon icon={faTrashAlt} />
+                                        </button>
+                                        
                                     </div>
                                 </div>
                             </div>
